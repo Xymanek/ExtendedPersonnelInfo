@@ -18,6 +18,9 @@
     <Folder Include="Src\ExtendedPersonnelInfo\Classes\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Config\XComContent.ini">
+      <SubType>Content</SubType>
+    </Content>
     <Content Include="Config\XcomExtendedPersonnelInfo.ini">
       <SubType>Content</SubType>
     </Content>
@@ -29,55 +32,10 @@
     <Content Include="Config\XComEngine.ini" />
     <Content Include="Config\XComGame.ini" />
     <Content Include="Localization\XComGame.int" />
-    <Content Include="Src\ExtendedPersonnelInfo\Classes\EPI_LeftPane.uc">
-      <SubType>Content</SubType>
-    </Content>
     <Content Include="Src\ExtendedPersonnelInfo\Classes\EPI_Main.uc">
       <SubType>Content</SubType>
     </Content>
     <Content Include="Src\ExtendedPersonnelInfo\Classes\EPI_PersonnelListener.uc">
-      <SubType>Content</SubType>
-    </Content>
-    <Content Include="Src\ExtendedPersonnelInfo\Classes\EPI_RightPane.uc">
-      <SubType>Content</SubType>
-    </Content>
-    <Content Include="Src\ExtendedPersonnelInfo\Classes\EPI_Section.uc">
-      <SubType>Content</SubType>
-    </Content>
-    <Content Include="Src\ExtendedPersonnelInfo\Classes\EPI_SectionHeader.uc">
-      <SubType>Content</SubType>
-    </Content>
-    <Content Include="Src\ExtendedPersonnelInfo\Classes\EPI_Section_Bonds.uc">
-      <SubType>Content</SubType>
-    </Content>
-    <Content Include="Src\ExtendedPersonnelInfo\Classes\EPI_Section_Headshot.uc">
-      <SubType>Content</SubType>
-    </Content>
-    <Content Include="Src\ExtendedPersonnelInfo\Classes\EPI_Section_Loadout.uc">
-      <SubType>Content</SubType>
-    </Content>
-    <Content Include="Src\ExtendedPersonnelInfo\Classes\EPI_Section_Loadout_Item.uc">
-      <SubType>Content</SubType>
-    </Content>
-    <Content Include="Src\ExtendedPersonnelInfo\Classes\EPI_Section_Loadout_Slot.uc">
-      <SubType>Content</SubType>
-    </Content>
-    <Content Include="Src\ExtendedPersonnelInfo\Classes\EPI_Section_Loadout_Upgrade.uc">
-      <SubType>Content</SubType>
-    </Content>
-    <Content Include="Src\ExtendedPersonnelInfo\Classes\EPI_Section_Skills.uc">
-      <SubType>Content</SubType>
-    </Content>
-    <Content Include="Src\ExtendedPersonnelInfo\Classes\EPI_Section_Stats.uc">
-      <SubType>Content</SubType>
-    </Content>
-    <Content Include="Src\ExtendedPersonnelInfo\Classes\EPI_Section_Traits.uc">
-      <SubType>Content</SubType>
-    </Content>
-    <Content Include="Src\ExtendedPersonnelInfo\Classes\EPI_SidePane.uc">
-      <SubType>Content</SubType>
-    </Content>
-    <Content Include="Src\ExtendedPersonnelInfo\Classes\EPI_SubHeader.uc">
       <SubType>Content</SubType>
     </Content>
     <Content Include="Src\ExtendedPersonnelInfo\Classes\EPI_Utilities.uc">
@@ -86,22 +44,6 @@
     <Content Include="Src\ExtendedPersonnelInfo\Classes\EPI_Utilities_BondCadidateSorting.uc">
       <SubType>Content</SubType>
     </Content>
-    <Content Include="Src\ExtendedPersonnelInfo\Classes\EPI_VerticalLayout_Container.uc">
-      <SubType>Content</SubType>
-    </Content>
-    <Content Include="Src\ExtendedPersonnelInfo\Classes\EPI_VerticalLayout_Item.uc">
-      <SubType>Content</SubType>
-    </Content>
-    <Content Include="Src\ExtendedPersonnelInfo\Classes\EPI_VerticalLayout_ItemBorder.uc">
-      <SubType>Content</SubType>
-    </Content>
-    <Content Include="Src\ExtendedPersonnelInfo\Classes\EPI_VerticalLayout_ItemPadding.uc">
-      <SubType>Content</SubType>
-    </Content>
-    <Content Include="Src\ExtendedPersonnelInfo\Classes\UIBladeBG.uc">
-      <SubType>Content</SubType>
-    </Content>
-    <Content Include="Src\ExtendedPersonnelInfo\Classes\X2DownloadableContentInfo_ExtendedPersonnelInfo.uc" />
   </ItemGroup>
   <PropertyGroup>
     <SolutionRoot>$(MSBuildProjectDirectory)\..\</SolutionRoot>
