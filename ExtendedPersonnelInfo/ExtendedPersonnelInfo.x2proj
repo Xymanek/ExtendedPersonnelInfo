@@ -7,6 +7,7 @@
     <SteamPublishID>0</SteamPublishID>
     <AssemblyName>ExtendedPersonnelInfo</AssemblyName>
     <RootNamespace>ExtendedPersonnelInfo</RootNamespace>
+    <ProjectGuid>{E5C3D568-B4D5-4EBF-9CCD-3C56D74A8C5B}</ProjectGuid>
   </PropertyGroup>
   <ItemGroup>
     <Folder Include="Config\" />
