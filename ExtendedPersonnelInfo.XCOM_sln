@@ -7,9 +7,12 @@ Project("{5DAE07AF-E217-45C1-8DE7-FF99D6011E8A}") = "ExtendedPersonnelInfo", "Ex
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|XCOM 2 = Debug|XCOM 2
 		Default|XCOM 2 = Default|XCOM 2
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E5C3D568-B4D5-4EBF-9CCD-3C56D74A8C5B}.Debug|XCOM 2.ActiveCfg = Debug|XCOM 2
+		{E5C3D568-B4D5-4EBF-9CCD-3C56D74A8C5B}.Debug|XCOM 2.Build.0 = Debug|XCOM 2
 		{E5C3D568-B4D5-4EBF-9CCD-3C56D74A8C5B}.Default|XCOM 2.ActiveCfg = Default|XCOM 2
 		{E5C3D568-B4D5-4EBF-9CCD-3C56D74A8C5B}.Default|XCOM 2.Build.0 = Default|XCOM 2
 	EndGlobalSection
