@@ -80,7 +80,7 @@ simulated protected function BuildLeftWing ()
 	LeftWingBG = Spawn(class'UIImage', LeftWingContainer);
 	LeftWingBG.bAnimateOnInit = false;
 	LeftWingBG.InitImage('LeftWingBG', "img:///EPI_UILibrary.bg_left_wing");
-	LeftWingBG.SetSize(402, 891);
+	//LeftWingBG.SetSize(402, 891);
 }
 
 simulated protected function BuildRightWing ()

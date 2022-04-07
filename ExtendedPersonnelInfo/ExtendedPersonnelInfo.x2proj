@@ -38,10 +38,19 @@
     <Content Include="Src\ExtendedPersonnelInfo\Classes\EPI_PersonnelListener.uc">
       <SubType>Content</SubType>
     </Content>
+    <Content Include="Src\ExtendedPersonnelInfo\Classes\EPI_ScaleformTest.uc">
+      <SubType>Content</SubType>
+    </Content>
     <Content Include="Src\ExtendedPersonnelInfo\Classes\EPI_Utilities.uc">
       <SubType>Content</SubType>
     </Content>
     <Content Include="Src\ExtendedPersonnelInfo\Classes\EPI_Utilities_BondCadidateSorting.uc">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Src\ExtendedPersonnelInfo\Classes\GFxCanvas.uc">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Src\ExtendedPersonnelInfo\Classes\UICanvas.uc">
       <SubType>Content</SubType>
     </Content>
   </ItemGroup>
