@@ -1,4 +1,4 @@
-class GFxCanvas extends GFxObject;
+class GFxCanvas extends GFxObject dependson(ScaleformCanvasHelpers);
 
 ////////////////
 /// Creation ///
@@ -37,13 +37,39 @@ function AS_LineStyle (
 	ActionScriptVoid("lineStyle");
 }
 
+function LineGradientStyle (MovieClipLineGradientStyle Style)
+{
+	local array<float> Colors, Alphas, Ratios;
+	local int i;
+
+	Colors.Length = Style.Points.Length;
+	Alphas.Length = Style.Points.Length;
+	Ratios.Length = Style.Points.Length;
+
+	for (i = 0; i < Style.Points.Length; i++)
+	{
+		Colors[i] = Style.Points[i].Color;
+		Alphas[i] = Style.Points[i].Alpha;
+		Ratios[i] = Style.Points[i].Ratio;
+	}
+
+	AS_LineGradientStyle(
+		class'ScaleformCanvasHelpers'.static.LineGradientFillToString(Style.FillType),
+		Colors, Alphas, Ratios,
+		Style.StyleMatrix,
+		class'ScaleformCanvasHelpers'.static.LineGradientSpreadToString(Style.SpreadMethod),
+		class'ScaleformCanvasHelpers'.static.LineGradientInterpolationToString(Style.InterpolationMethod),
+		Style.FocalPointRatio
+	);
+}
+
 function AS_LineGradientStyle (
 	string FillType, // Valid values are "linear" or "radial"
 	array<float> Colors, array<float> Alphas, array<float> Ratios, // Lengths must match
 	GFxObject InMatrix,
 	string SpreadMethod = "pad", // Valid values are "pad", "reflect" or "repeat"
-	string interpolationMethod = "RGB", // Valid values are "RGB" or "linearRGB"
-	float focalPointRatio = 0 // [-1, 1]
+	string InterpolationMethod = "RGB", // Valid values are "RGB" or "linearRGB"
+	float FocalPointRatio = 0 // [-1, 1]
 )
 {
 	ActionScriptVoid("lineGradientStyle");

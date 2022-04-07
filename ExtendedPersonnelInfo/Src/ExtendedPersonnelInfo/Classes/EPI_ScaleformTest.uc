@@ -1,4 +1,4 @@
-class EPI_ScaleformTest extends UIScreen;
+class EPI_ScaleformTest extends UIScreen dependson(ScaleformCanvasHelpers);
 
 //var GFxObject SelfGfx;
 //var GFxObject TestGfx;
@@ -131,27 +131,37 @@ simulated function OnCanvasInit (UIPanel Panel)
 
 simulated function OnCanvas5Init (UIPanel Panel)
 {
-	local array<float> Colors, Alphas, Ratios;
-	local GFxObject LineStyleMatrix;
+	local MovieClipLineGradientStyle LineGradientStyle;
+	//local array<float> Colors, Alphas, Ratios;
+	//local GFxObject LineStyleMatrix;
 	local GFxCanvas Canvas;
 
-	Colors.Length = 2;
-	Colors[0] = 0xFF0000;
-	Colors[1] = 0x0000FF;
+	//Colors.Length = 2;
+	//Colors[0] = 0xFF0000;
+	//Colors[1] = 0x0000FF;
+	//
+	//Alphas.Length = 2;
+	//Alphas[0] = 100;
+	//Alphas[1] = 100;
+	//
+	//Ratios.Length = 2;
+	//Ratios[0] = 0;
+	//Ratios[1] = 255;
 
-	Alphas.Length = 2;
-	Alphas[0] = 100;
-	Alphas[1] = 100;
+	LineGradientStyle.Points.Length = 2;
+	
+	LineGradientStyle.Points[0].Color = 0xFF0000;
+	LineGradientStyle.Points[0].Ratio = 0;
 
-	Ratios.Length = 2;
-	Ratios[0] = 0;
-	Ratios[1] = 255;
+	LineGradientStyle.Points[1].Color = 0x0000FF;
+	LineGradientStyle.Points[1].Ratio = 255;
 
 	Canvas = CanvasPanel5.GetGFxCanvas();
-	LineStyleMatrix = Canvas.CreateBoxMatrixForLineGradient(0, 0, 100, 20);
+	//LineStyleMatrix = Canvas.CreateBoxMatrixForLineGradient(0, 0, 100, 20);
+	LineGradientStyle.StyleMatrix = Canvas.CreateBoxMatrixForLineGradient(0, 0, 100, 20);
 
 	Canvas.AS_LineStyle(20,,,,, "none");
-	Canvas.AS_LineGradientStyle("linear", Colors, Alphas, Ratios, LineStyleMatrix);
+	Canvas.LineGradientStyle(LineGradientStyle);
 	Canvas.AS_LineTo(100, 0);
 	Canvas.AS_EndFill();
 }
