@@ -118,15 +118,15 @@ simulated function OnCanvasInit (UIPanel Panel)
 
 	Canvas = class'GFxCanvas'.static.ForPanel(Panel);
 
-	Canvas.BeginFill(0xFF0000);
-	Canvas.MoveTo(10, 10);
-	Canvas.LineStyle(5, 0x0000FF, 100);
-	Canvas.LineTo(100, 10);
-	Canvas.LineTo(150, 60);
-	Canvas.LineTo(100, 100);
-	Canvas.LineTo(10, 100);
-	Canvas.LineTo(10, 10);
-	Canvas.EndFill();
+	Canvas.AS_BeginFill(0xFF0000);
+	Canvas.AS_MoveTo(10, 10);
+	Canvas.AS_LineStyle(5, 0x0000FF, 100);
+	Canvas.AS_LineTo(100, 10);
+	Canvas.AS_LineTo(150, 60);
+	Canvas.AS_LineTo(100, 100);
+	Canvas.AS_LineTo(10, 100);
+	Canvas.AS_LineTo(10, 10);
+	Canvas.AS_EndFill();
 }
 
 simulated function OnCanvas5Init (UIPanel Panel)
@@ -150,8 +150,8 @@ simulated function OnCanvas5Init (UIPanel Panel)
 	Canvas = CanvasPanel5.GetGFxCanvas();
 	LineStyleMatrix = Canvas.CreateBoxMatrixForLineGradient(0, 0, 100, 20);
 
-	Canvas.LineStyle(20,,,,, "none");
-	Canvas.LineGradientStyle("linear", Colors, Alphas, Ratios, LineStyleMatrix);
-	Canvas.LineTo(100, 0);
-	Canvas.EndFill();
+	Canvas.AS_LineStyle(20,,,,, "none");
+	Canvas.AS_LineGradientStyle("linear", Colors, Alphas, Ratios, LineStyleMatrix);
+	Canvas.AS_LineTo(100, 0);
+	Canvas.AS_EndFill();
 }
