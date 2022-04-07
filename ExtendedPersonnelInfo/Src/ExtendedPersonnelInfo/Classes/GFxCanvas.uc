@@ -32,9 +32,9 @@ function LineStyle (MovieClipLineStyle Style)
 {
 	AS_LineStyle(
 		Style.Thickness, Style.Color, Style.Alpha, Style.PixelHinting,
-		class'ScaleformCanvasHelpers'.static.LineNoScaleToString(Style.NoScale),
-		class'ScaleformCanvasHelpers'.static.LineCapsToString(Style.CapsStyle),
-		class'ScaleformCanvasHelpers'.static.LineJointToString(Style.JointStyle),
+		class'ScaleformCanvasHelpers'.static.LineNoScaleToAS(Style.NoScale),
+		class'ScaleformCanvasHelpers'.static.LineCapsToAS(Style.CapsStyle),
+		class'ScaleformCanvasHelpers'.static.LineJointToAS(Style.JointStyle),
 		Style.MiterLimit
 	);
 }
@@ -67,11 +67,11 @@ function LineGradientStyle (MovieClipLineGradientStyle Style)
 	}
 
 	AS_LineGradientStyle(
-		class'ScaleformCanvasHelpers'.static.LineGradientFillToString(Style.FillType),
+		class'ScaleformCanvasHelpers'.static.LineGradientFillToAS(Style.FillType),
 		Colors, Alphas, Ratios,
 		Style.StyleMatrix,
-		class'ScaleformCanvasHelpers'.static.LineGradientSpreadToString(Style.SpreadMethod),
-		class'ScaleformCanvasHelpers'.static.LineGradientInterpolationToString(Style.InterpolationMethod),
+		class'ScaleformCanvasHelpers'.static.LineGradientSpreadToAS(Style.SpreadMethod),
+		class'ScaleformCanvasHelpers'.static.LineGradientInterpolationToAS(Style.InterpolationMethod),
 		Style.FocalPointRatio
 	);
 }

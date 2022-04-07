@@ -128,9 +128,8 @@ static function GFxObject CreateBoxMatrixForLineGradient (
 ///////////////////////////////////////////////
 // No default returns on purpose - we want the VM to produce
 // a warning if there is an unhandled case
-// TODO: s/ToString/ToAS
 
-static function string LineNoScaleToString (EMovieClipLineNoScale NoScale)
+static function string LineNoScaleToAS (EMovieClipLineNoScale NoScale)
 {
 	switch (NoScale)
 	{
@@ -148,7 +147,7 @@ static function string LineNoScaleToString (EMovieClipLineNoScale NoScale)
 	}
 }
 
-static function string LineCapsToString (EMovieClipLineCaps CapsStyle)
+static function string LineCapsToAS (EMovieClipLineCaps CapsStyle)
 {
 	switch (CapsStyle)
 	{
@@ -163,7 +162,7 @@ static function string LineCapsToString (EMovieClipLineCaps CapsStyle)
 	}
 }
 
-static function string LineJointToString (EMovieClipLineJoint JointStyle)
+static function string LineJointToAS (EMovieClipLineJoint JointStyle)
 {
 	switch (JointStyle)
 	{
@@ -178,7 +177,7 @@ static function string LineJointToString (EMovieClipLineJoint JointStyle)
 	}
 }
 
-static function string LineGradientFillToString (EMovieClipLineGradientFill FillType)
+static function string LineGradientFillToAS (EMovieClipLineGradientFill FillType)
 {
 	switch (FillType)
 	{
@@ -190,7 +189,7 @@ static function string LineGradientFillToString (EMovieClipLineGradientFill Fill
 	}
 }
 
-static function string LineGradientSpreadToString (EMovieClipLineGradientSpread SpreadMethod)
+static function string LineGradientSpreadToAS (EMovieClipLineGradientSpread SpreadMethod)
 {
 	switch (SpreadMethod)
 	{
@@ -205,7 +204,7 @@ static function string LineGradientSpreadToString (EMovieClipLineGradientSpread 
 	}
 }
 
-static function string LineGradientInterpolationToString (EMovieClipLineGradientInterpolation InterpolationMethod)
+static function string LineGradientInterpolationToAS (EMovieClipLineGradientInterpolation InterpolationMethod)
 {
 	switch (InterpolationMethod)
 	{

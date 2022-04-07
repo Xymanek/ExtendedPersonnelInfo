@@ -25,9 +25,9 @@ simulated function LineStyle (MovieClipLineStyle Style)
 {
 	AS_LineStyle(
 		Style.Thickness, Style.Color, Style.Alpha, Style.PixelHinting,
-		class'ScaleformCanvasHelpers'.static.LineNoScaleToString(Style.NoScale),
-		class'ScaleformCanvasHelpers'.static.LineCapsToString(Style.CapsStyle),
-		class'ScaleformCanvasHelpers'.static.LineJointToString(Style.JointStyle),
+		class'ScaleformCanvasHelpers'.static.LineNoScaleToAS(Style.NoScale),
+		class'ScaleformCanvasHelpers'.static.LineCapsToAS(Style.CapsStyle),
+		class'ScaleformCanvasHelpers'.static.LineJointToAS(Style.JointStyle),
 		Style.MiterLimit
 	);
 }
