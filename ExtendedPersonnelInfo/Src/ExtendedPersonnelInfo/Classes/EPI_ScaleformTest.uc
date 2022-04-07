@@ -12,6 +12,8 @@ var UIBGBox BG2;
 var UICanvas CanvasPanel3;
 var UICanvas CanvasPanel4;
 
+var UICanvas CanvasPanel5;
+
 //var GFxCanvas Canvas;
 
 simulated function InitScreen(XComPlayerController InitController, UIMovie InitMovie, optional name InitName)
@@ -78,6 +80,11 @@ simulated function InitScreen(XComPlayerController InitController, UIMovie InitM
 	CanvasPanel4.AS_LineTo(0, 100);
 	CanvasPanel4.AS_LineTo(0, 0);
 	CanvasPanel4.AS_EndFill();
+
+	CanvasPanel5 = Spawn(class'UICanvas', self);
+	CanvasPanel5.AddOnInitDelegate(OnCanvas5Init);
+	CanvasPanel5.InitPanel('CanvasPanel5');
+	CanvasPanel5.SetPosition(900, 400);
 }
 
 //simulated function OnInit ()
@@ -119,5 +126,32 @@ simulated function OnCanvasInit (UIPanel Panel)
 	Canvas.LineTo(100, 100);
 	Canvas.LineTo(10, 100);
 	Canvas.LineTo(10, 10);
+	Canvas.EndFill();
+}
+
+simulated function OnCanvas5Init (UIPanel Panel)
+{
+	local array<float> Colors, Alphas, Ratios;
+	local GFxObject LineStyleMatrix;
+	local GFxCanvas Canvas;
+
+	Colors.Length = 2;
+	Colors[0] = 0xFF0000;
+	Colors[1] = 0x0000FF;
+
+	Alphas.Length = 2;
+	Alphas[0] = 100;
+	Alphas[1] = 100;
+
+	Ratios.Length = 2;
+	Ratios[0] = 0;
+	Ratios[1] = 255;
+
+	Canvas = CanvasPanel5.GetGFxCanvas();
+	LineStyleMatrix = Canvas.CreateBoxMatrixForLineGradient(0, 0, 100, 20);
+
+	Canvas.LineStyle(20,,,,, "none");
+	Canvas.LineGradientStyle("linear", Colors, Alphas, Ratios, LineStyleMatrix);
+	Canvas.LineTo(100, 0);
 	Canvas.EndFill();
 }

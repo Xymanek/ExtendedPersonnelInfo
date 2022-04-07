@@ -50,6 +50,9 @@
     <Content Include="Src\ExtendedPersonnelInfo\Classes\GFxCanvas.uc">
       <SubType>Content</SubType>
     </Content>
+    <Content Include="Src\ExtendedPersonnelInfo\Classes\ScaleformCanvasHelpers.uc">
+      <SubType>Content</SubType>
+    </Content>
     <Content Include="Src\ExtendedPersonnelInfo\Classes\UICanvas.uc">
       <SubType>Content</SubType>
     </Content>

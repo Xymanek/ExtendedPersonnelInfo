@@ -66,7 +66,7 @@ simulated function SetMaskFor (UIPanel MaskedPanel)
 	MaskedPanel.MC.FunctionNum("setMaskControl", MC.cacheIndex);
 }
 
-simulated function GFxCanvas GetGfxCanvas ()
+simulated function GFxCanvas GetGFxCanvas ()
 {
 	return class'GFxCanvas'.static.ForPanel(self);
 }

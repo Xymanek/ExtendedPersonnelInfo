@@ -29,6 +29,16 @@ function LineStyle (
 	ActionScriptVoid("lineStyle");
 }
 
+function LineGradientStyle (
+	string FillType, array<float> Colors, array<float> Alphas,
+	array<float> Ratios, GFxObject InMatrix,
+	string SpreadMethod = "pad", string interpolationMethod = "RGB",
+	float focalPointRatio = 0
+)
+{
+	ActionScriptVoid("lineGradientStyle");
+}
+
 function LineTo (float InX, float InY)
 {
 	ActionScriptVoid("lineTo");
@@ -40,4 +50,15 @@ function CurveTo (
 )
 {
 	ActionScriptVoid("curveTo");
+}
+
+function GFxObject CreateBoxMatrixForLineGradient (
+	float X, float Y, // Upper left corner of gradient relavtive to owing movie clip
+	float Width, float Height,
+	float Rotation = 0 // Radians
+)
+{
+	return class'ScaleformCanvasHelpers'.static.CreateBoxMatrixForLineGradient(
+		Outer, X, Y, Width, Height, Rotation
+	);
 }
