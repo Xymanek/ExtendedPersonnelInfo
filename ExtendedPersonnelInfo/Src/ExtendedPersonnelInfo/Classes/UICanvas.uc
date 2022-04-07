@@ -73,6 +73,8 @@ simulated function AS_CurveTo (
 	MC.EndOp();
 }
 
+// TODO: Clear
+
 // Both UICanvas and MaskedPanel must have had InitPanel() called
 simulated function SetMaskFor (UIPanel MaskedPanel)
 {

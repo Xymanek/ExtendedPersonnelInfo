@@ -18,6 +18,8 @@ function AS_BeginFill (float InColor, optional float InAlpha = 100)
 	ActionScriptVoid("beginFill");
 }
 
+// TODO: BeginGradientFill
+
 function AS_EndFill ()
 {
 	ActionScriptVoid("endFill");
@@ -100,6 +102,8 @@ function AS_CurveTo (
 {
 	ActionScriptVoid("curveTo");
 }
+
+// TODO: Clear
 
 ///////////////
 /// Helpers ///
