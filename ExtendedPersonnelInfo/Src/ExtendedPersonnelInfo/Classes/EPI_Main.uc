@@ -9,7 +9,8 @@ var XComGameState_Unit CurrentUnit;
 
 var UIPanel LeftWingAnchor;
 var UIPanel LeftWingContainer;
-var UIImage LeftWingBG;
+//var UIImage LeftWingBG;
+var UICanvas LeftWingBG;
 
 var UIPanel RightWingAnchor;
 var UIPanel RightWingContainer;
@@ -69,18 +70,42 @@ simulated protected function BuildLeftWing ()
 	LeftWingAnchor = Spawn(class'UIPanel', self);
 	LeftWingAnchor.bAnimateOnInit = false;
 	LeftWingAnchor.InitPanel('LeftWingAnchor');
+	//LeftWingAnchor.SetX(class'EPI_Utilities'.const.PersonnelX + 1);
 	LeftWingAnchor.SetX(class'EPI_Utilities'.const.PersonnelX + 1);
 	LeftWingAnchor.SetY(class'EPI_Utilities'.const.PersonnelY);
 
 	LeftWingContainer = Spawn(class'UIPanel', LeftWingAnchor);
 	LeftWingContainer.bAnimateOnInit = false;
 	LeftWingContainer.InitPanel('LeftWingContainer');
-	LeftWingContainer.SetX(-402);
+	//LeftWingContainer.SetX(-402);
+	LeftWingContainer.SetX(-400);
 
-	LeftWingBG = Spawn(class'UIImage', LeftWingContainer);
-	LeftWingBG.bAnimateOnInit = false;
-	LeftWingBG.InitImage('LeftWingBG', "img:///EPI_UILibrary.bg_left_wing");
+	//LeftWingBG = Spawn(class'UIImage', LeftWingContainer);
+	//LeftWingBG.bAnimateOnInit = false;
+	//LeftWingBG.InitImage('LeftWingBG', "img:///EPI_UILibrary.bg_left_wing");
 	//LeftWingBG.SetSize(402, 891);
+
+	LeftWingBG = Spawn(class'UICanvas', LeftWingContainer);
+	LeftWingBG.bAnimateOnInit = false;
+	LeftWingBG.InitPanel('LeftWingBG');
+	
+	// Counter clockwise, starting from bottom right
+	LeftWingBG.AS_BeginFill(0x000000, 70);
+	LeftWingBG.AS_MoveTo(400, 890);
+	LeftWingBG.LineStyle(class'ScaleformCanvasHelpers'.default.LineStyle_Invisible);
+	LeftWingBG.AS_LineTo(62, 890);
+	LeftWingBG.AS_LineTo(44, 869);
+	LeftWingBG.AS_LineTo(44, 753);
+	LeftWingBG.AS_LineTo(0, 714);
+	LeftWingBG.AS_LineTo(0, 503);
+	LeftWingBG.AS_LineTo(44, 466);
+	LeftWingBG.AS_LineTo(44, 19);
+	LeftWingBG.AS_LineTo(62, 0);
+	LeftWingBG.AS_LineTo(400, 0);
+	LeftWingBG.AS_LineTo(400, 890);
+	LeftWingBG.AS_EndFill();
+
+	// TODO: Border line, splitter dags
 }
 
 simulated protected function BuildRightWing ()

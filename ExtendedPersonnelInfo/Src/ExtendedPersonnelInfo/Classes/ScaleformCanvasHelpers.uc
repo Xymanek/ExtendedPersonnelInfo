@@ -103,6 +103,8 @@ struct MovieClipLineGradientStyle
 	}
 };
 
+var const MovieClipLineStyle LineStyle_Invisible;
+
 static function GFxObject CreateBoxMatrixForLineGradient (
 	GFxMoviePlayer Movie,
 	float X, float Y, // Upper left corner of gradient relavtive to owing movie clip
@@ -214,4 +216,9 @@ static function string LineGradientInterpolationToAS (EMovieClipLineGradientInte
 		case eMCLGI_LinearRGB:
 			return "linearRGB";
 	}
+}
+
+defaultproperties
+{
+	LineStyle_Invisible = (Thickness = 0, Alpha = 0);
 }
