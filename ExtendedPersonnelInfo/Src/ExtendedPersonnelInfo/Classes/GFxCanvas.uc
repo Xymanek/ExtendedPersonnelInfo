@@ -28,10 +28,23 @@ function AS_MoveTo (float InX, float InY)
 	ActionScriptVoid("moveTo");
 }
 
+function LineStyle (MovieClipLineStyle Style)
+{
+	AS_LineStyle(
+		Style.Thickness, Style.Color, Style.Alpha, Style.PixelHinting,
+		class'ScaleformCanvasHelpers'.static.LineNoScaleToString(Style.NoScale),
+		class'ScaleformCanvasHelpers'.static.LineCapsToString(Style.CapsStyle),
+		class'ScaleformCanvasHelpers'.static.LineJointToString(Style.JointStyle),
+		Style.MiterLimit
+	);
+}
+
 function AS_LineStyle (
-	float Thickness, float InColor = 0x000000, float InAlpha = 100,
-	bool PixelHinting = false, string NoScale = "normal",
-	string CapsStyle = "round", string JointStyle = "round", float miterLimit = 3
+	float Thickness, float InColor = 0x000000, float InAlpha = 100, bool PixelHinting = false,
+	string NoScale = "normal", // Valid values are "normal", "none", "vertical", "horizontal"
+	string CapsStyle = "round", // Valid values are "round", "square", "none"
+	string JointStyle = "round", // Valid values are "round", "miter", "bevel"
+	float MiterLimit = 3
 )
 {
 	ActionScriptVoid("lineStyle");

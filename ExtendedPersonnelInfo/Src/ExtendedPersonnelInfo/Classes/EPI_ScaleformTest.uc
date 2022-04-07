@@ -132,9 +132,13 @@ simulated function OnCanvasInit (UIPanel Panel)
 simulated function OnCanvas5Init (UIPanel Panel)
 {
 	local MovieClipLineGradientStyle LineGradientStyle;
+	local MovieClipLineStyle LineStyle;
 	//local array<float> Colors, Alphas, Ratios;
 	//local GFxObject LineStyleMatrix;
 	local GFxCanvas Canvas;
+
+	LineStyle.Thickness = 20;
+	LineStyle.CapsStyle = eMCLC_None;
 
 	//Colors.Length = 2;
 	//Colors[0] = 0xFF0000;
@@ -160,7 +164,7 @@ simulated function OnCanvas5Init (UIPanel Panel)
 	//LineStyleMatrix = Canvas.CreateBoxMatrixForLineGradient(0, 0, 100, 20);
 	LineGradientStyle.StyleMatrix = Canvas.CreateBoxMatrixForLineGradient(0, 0, 100, 20);
 
-	Canvas.AS_LineStyle(20,,,,, "none");
+	Canvas.LineStyle(LineStyle);
 	Canvas.LineGradientStyle(LineGradientStyle);
 	Canvas.AS_LineTo(100, 0);
 	Canvas.AS_EndFill();

@@ -1,5 +1,53 @@
 class ScaleformCanvasHelpers extends Object abstract;
 
+enum EMovieClipLineNoScale
+{
+	eMCLNS_Normal,
+	eMCLNS_None,
+	eMCLNS_Vertical,
+	eMCLNS_Horizontal,
+};
+
+enum EMovieClipLineCaps
+{
+	eMCLC_Round,
+	eMCLC_Square,
+	eMCLC_None,
+};
+
+enum EMovieClipLineJoint
+{
+	eMCLJ_Round,
+	eMCLJ_Miter,
+	eMCLJ_Bevel,
+};
+
+struct MovieClipLineStyle
+{
+	// Required
+	var float Thickness; // [0, 255]
+
+	// Optional
+	var float Color; // RGB hexadecimal color value
+	var float Alpha; // [0, 100]
+	var bool PixelHinting;
+	var EMovieClipLineNoScale NoScale;
+	var EMovieClipLineCaps CapsStyle;
+	var EMovieClipLineJoint JointStyle;
+	var float MiterLimit; // [1, 255]. Only relevant when JointStyle is eMCLJ_Miter
+
+	structdefaultproperties
+	{
+		Color = 0x000000;
+		Alpha = 100;
+		PixelHinting = false;
+		NoScale = eMCLNS_Normal;
+		CapsStyle = eMCLC_Round;
+		JointStyle = eMCLJ_Round;
+		MiterLimit = 3;
+	}
+};
+
 enum EMovieClipLineGradientFill
 {
 	eMCLGF_Linear,
@@ -80,6 +128,55 @@ static function GFxObject CreateBoxMatrixForLineGradient (
 ///////////////////////////////////////////////
 // No default returns on purpose - we want the VM to produce
 // a warning if there is an unhandled case
+// TODO: s/ToString/ToAS
+
+static function string LineNoScaleToString (EMovieClipLineNoScale NoScale)
+{
+	switch (NoScale)
+	{
+		case eMCLNS_Normal:
+			return "normal";
+
+		case eMCLNS_None:
+			return "none";
+
+		case eMCLNS_Vertical:
+			return "vertical";
+
+		case eMCLNS_Horizontal:
+			return "horizontal";
+	}
+}
+
+static function string LineCapsToString (EMovieClipLineCaps CapsStyle)
+{
+	switch (CapsStyle)
+	{
+		case eMCLC_Round:
+			return "round";
+
+		case eMCLC_Square:
+			return "square";
+
+		case eMCLC_None:
+			return "none";
+	}
+}
+
+static function string LineJointToString (EMovieClipLineJoint JointStyle)
+{
+	switch (JointStyle)
+	{
+		case eMCLJ_Round:
+			return "round";
+
+		case eMCLJ_Miter:
+			return "miter";
+
+		case eMCLJ_Bevel:
+			return "bevel";
+	}
+}
 
 static function string LineGradientFillToString (EMovieClipLineGradientFill FillType)
 {
