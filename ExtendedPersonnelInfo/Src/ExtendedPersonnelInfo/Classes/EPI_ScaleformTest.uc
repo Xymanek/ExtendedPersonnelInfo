@@ -9,6 +9,9 @@ var UIBGBox BG;
 var UICanvas CanvasPanel2;
 var UIBGBox BG2;
 
+var UICanvas CanvasPanel3;
+var UICanvas CanvasPanel4;
+
 //var GFxCanvas Canvas;
 
 simulated function InitScreen(XComPlayerController InitController, UIMovie InitMovie, optional name InitName)
@@ -49,6 +52,32 @@ simulated function InitScreen(XComPlayerController InitController, UIMovie InitM
 	BG2.SetSize(600, 200);
 
 	CanvasPanel2.SetMaskFor(BG2);
+
+
+	CanvasPanel3 = Spawn(class'UICanvas', self);
+	CanvasPanel3.InitPanel('CanvasPanel3');
+	CanvasPanel3.SetPosition(500, 800);
+
+	CanvasPanel3.AS_LineStyle(0, 0x0000FF, 100);
+	CanvasPanel3.AS_BeginFill(0xFF0000);
+	CanvasPanel3.AS_MoveTo(0, 100);
+	CanvasPanel3.AS_CurveTo(0, 200, 100, 200);
+	CanvasPanel3.AS_CurveTo(200, 200, 200, 100);
+	CanvasPanel3.AS_CurveTo(200, 0, 100, 0);
+	CanvasPanel3.AS_CurveTo(0, 0, 0, 100);
+	CanvasPanel3.AS_EndFill();
+
+	CanvasPanel4 = Spawn(class'UICanvas', self);
+	CanvasPanel4.InitPanel('CanvasPanel4');
+	CanvasPanel4.SetPosition(900, 800);
+
+	CanvasPanel4.AS_BeginFill(0x0000FF);
+	CanvasPanel4.AS_LineStyle(0,, 0);
+	CanvasPanel4.AS_LineTo(100, 0);
+	CanvasPanel4.AS_CurveTo(150, 50, 100, 100);
+	CanvasPanel4.AS_LineTo(0, 100);
+	CanvasPanel4.AS_LineTo(0, 0);
+	CanvasPanel4.AS_EndFill();
 }
 
 //simulated function OnInit ()

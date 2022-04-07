@@ -47,6 +47,19 @@ simulated function AS_LineTo (float InX, float InY)
 	MC.EndOp();
 }
 
+simulated function AS_CurveTo (
+	float ControlX, float ControlY,
+	float AnchorX, float AnchorY
+)
+{
+	MC.BeginFunctionOp("curveTo");
+	MC.QueueNumber(ControlX);
+	MC.QueueNumber(ControlY);
+	MC.QueueNumber(AnchorX);
+	MC.QueueNumber(AnchorY);
+	MC.EndOp();
+}
+
 // Both UICanvas and MaskedPanel must have had InitPanel() called
 simulated function SetMaskFor (UIPanel MaskedPanel)
 {

@@ -33,3 +33,11 @@ function LineTo (float InX, float InY)
 {
 	ActionScriptVoid("lineTo");
 }
+
+function CurveTo (
+	float ControlX, float ControlY,
+	float AnchorX, float AnchorY
+)
+{
+	ActionScriptVoid("curveTo");
+}
